@@ -1,0 +1,115 @@
+local Rayfield = loadstring(game:HttpGet('https://sirius.menu/rayfield'))()
+
+local Window = Rayfield:CreateWindow({
+   Name = "S2_script [Beta]",
+   Icon = 0, -- Icon in Topbar. Can use Lucide Icons (string) or Roblox Image (number). 0 to use no icon (default).
+   LoadingTitle = "",
+   LoadingSubtitle = "by Siafanyyyy",
+   Theme = "DarkBlue", -- Check https://docs.sirius.menu/rayfield/configuration/themes
+
+   DisableRayfieldPrompts = false,
+   DisableBuildWarnings = false, -- Prevents Rayfield from warning when the script has a version mismatch with the interface
+
+   ConfigurationSaving = {
+      Enabled = false,
+      FolderName = nil, -- Create a custom folder for your hub/game
+      FileName = "Sr2_Team script "
+   },
+
+   Discord = {
+      Enabled = true, -- Prompt the user to join your Discord server if their executor supports it
+      Invite = "Sr2 Team", -- The Discord invite code, do not include discord.gg/. E.g. discord.gg/ ABCD would be ABCD
+      RememberJoins = true -- Set this to false to make them join the discord every time they load it up
+   },
+
+   KeySystem = true, -- Set this to true to use our key system
+   KeySettings = {
+      Title = "S2| key ",
+      Subtitle = "المفتاح في سيرفري او في قناتي التليجرام",
+      Note = "ادخل المفتاح من قناتي ", -- Use this to tell the user how to get a key
+      FileName = "ادخل المفتاح هنا ", -- It is recommended to use something unique as other scripts using Rayfield may overwrite your key file
+      SaveKey = true, -- The user's key will be saved, but if you change the key, they will be unable to use your script
+      GrabKeyFromSite = true, -- If this is true, set Key below to the RAW site you would like Rayfield to get the key from
+      Key = {"https://pastebin.com/raw/sk0YzzeJ"} -- List of keys that will be accepted by the system, can be RAW file links (pastebin, github etc) or simple strings ("hello","key22")
+   }
+})
+
+local MainTab = Window:CreateTab("ماب  البيوت", nil) -- Title, Image
+local MainSection = MainTab:CreateSection("main")
+
+Rayfield:Notify({
+   Title = "انت فعلت السكربت ",
+   Content = "السكربت تحت التحديث ",
+ Duration = 5.5,
+   Image = nil,
+})
+
+local Button = MainTab:CreateButton({
+   Name = "astrox hub",
+   Callback = function()
+   loadstring(game:HttpGet("https://raw.githubusercontent.com/AstroXTeam/AstroXHubNeta/refs/heads/main/%D9%87%D9%84%D9%88.lua"))({ "https://t.me/+tuhsBmhYBT0wMzBi",true,"BY:nxDredd" })   end,
+})
+
+local Button = MainTab:CreateButton({
+   Name = "نسخ سكنات ( بدون مفتاح )",
+   Callback = function()
+   loadstring(game:HttpGet("https://rawscripts.net/raw/Brookhaven-RP-Rochips-Universal-21865"))()
+   end,
+})
+
+local Button = MainTab:CreateButton({
+   Name = "( سكربت قتل ( بدون مفتاح ",
+   Callback = function()
+   loadstring(game:HttpGet("https://raw.githubusercontent.com/TrollGuiMaker/f0rtuit0us-hub/refs/heads/main/old"))()
+   end,
+})
+
+local Button = MainTab:CreateButton({
+   Name = "سكربت قتل ( بمفتاح )",
+   Callback = function()
+   loadstring(game:HttpGet("https://raw.githubusercontent.com/RFR-R1CH4RD/Loader/main/Salvatore.lua"))()
+   end,
+})
+
+local Button = MainTab:CreateButton({
+   Name = "سكربت يوسف",
+   Callback = function()
+   loadstring(game:HttpGet("https://rawscripts.net/raw/Brookhaven-RP-Brookhave-lraq-20207"))()
+   end,
+})
+
+local Button = MainTab:CreateButton({
+   Name = "سكربت ايات",
+   Callback = function()
+    loadstring(game:HttpGet("https://rawscripts.net/raw/Brookhaven-RP-i2att-22075"))()
+   end,
+})
+
+local Button = MainTab:CreateButton({
+   Name = "ZHM HUB",
+   Callback = function()
+    loadstring(game:HttpGet('https://raw.githubusercontent.com/apeludo999/GgScripts/refs/heads/main/ZKM%20Hub%20Brookhaven.lua'))()
+   end,
+})
+
+local Button = MainTab:CreateButton({
+   Name = "سندرا اكس ",
+   Callback = function()
+    loadstring(game:HttpGet('https://raw.githubusercontent.com/sXPiterXs1111/SanderXV2.9/main/Brookhaven.lua'))()
+   end,
+})
+
+local TPTab = Window:CreateTab("السرعه و النط ", nil) -- Title, Image
+local MainSection = MainTab:CreateSection("main")
+
+local Slider = MainTab:CreateSlider({
+   Name = "سرعه الاعب",
+   Range = {1, 753},
+   Increment = 1,
+   Suffix = "السرعه",
+   CurrentValue = 16,
+   Flag = "sliderws", -- A flag is the identifier for the configuration file, make sure every element has a different flag if you're using configuration saving to ensure no overlaps
+   Callback = function(Value)
+        game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = (Value)
+   end,
+})
